@@ -13,9 +13,9 @@ var twoSum = function(nums, target) {
   nums.map((item, index) => {
     const start = index;
     const remainArr = nums.slice(start + 1);
-    const end = remainArr.findIndex((i) => i === target - item);
-    if (end !== -1) {
-      result = [start, end + start + 1];
+    const remainEnd = remainArr.findIndex(remainItem => remainItem === target - item);
+    if (remainEnd !== -1) {
+      result = [start, remainEnd + start + 1];
     };
   })
   return result;
